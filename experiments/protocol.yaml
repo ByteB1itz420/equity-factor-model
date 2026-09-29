@@ -1,0 +1,46 @@
+# Frozen analysis protocol - parameters fixed BEFORE the analysis run.
+# Git history shows this file committed before any results artifact.
+project: equity-factor-model
+author: Ayush Singh
+protocol_frozen_at: "2026-09-29"
+data:
+  price_source: Yahoo Finance via yfinance (auto-adjusted OHLC, monthly bars)
+  factor_source: Kenneth R. French Data Library (Dartmouth)
+  factor_series: [Mkt-RF, SMB, HML, RMW, CMA, RF, UMD]
+  universe: [AAPL, MSFT, GOOGL, NVDA, AMD, JPM, GS, JNJ, PG, XOM, CVX, WMT, AMZN, META, BRK-B, IWM]
+  universe_note: >
+    Universe inherited from the original notebook analysis. It is hindsight-selected
+    (survivors), which biases backtest results upward. Stated as a caveat everywhere.
+  price_window: {start: "2014-11-01", end: "2024-01-01"}   # extra history for returns/signals
+  sample: {start: "2015-01", end: "2023-12"}               # 108 monthly returns
+regression:
+  models:
+    CAPM: [Mkt-RF]
+    FF3: [Mkt-RF, SMB, HML]
+    FF4: [Mkt-RF, SMB, HML, UMD]
+    FF5: [Mkt-RF, SMB, HML, RMW, CMA]
+  hac_lags: 6            # Newey-West lag length for monthly data
+  alpha_multiple_testing: benjamini-hochberg (q=0.05 across 16 alphas per model)
+  rolling_beta_window: 36
+diagnostics:
+  jarque_bera: true
+  ljung_box_lags: 12
+evaluation:
+  train: {start: "2015-01", end: "2020-12"}   # 72 months
+  test:  {start: "2021-01", end: "2023-12"}   # 36 months, touched once
+  oos_metric: out-of-sample R2 vs train-mean benchmark
+backtest:
+  strategy: long-only monthly-rebalanced top-5 of 16 by 12-1 momentum (total return months t-12..t-2)
+  benchmark_1: equal-weight 16-stock universe, monthly rebalanced
+  benchmark_2: SPY (Yahoo auto-adjusted)
+  evaluation_window: {start: "2021-01", end: "2023-12"}   # strictly out of sample
+  cost_grid_bps: [0, 10, 25, 50]                          # one-way cost per unit turnover
+  headline_cost_bps: 10
+reproducibility:
+  retrieval_date_recorded: true
+  manifest: sha256 over every results artifact
+  audit_script: experiments/audit_snapshot.py
+notes:
+  - Regressions use excess returns (R_i - RF); the original notebook's Week-3
+    regression used raw returns, corrected here and documented in REPORT.md.
+  - No parameter was changed after inspecting test-window results.
