@@ -37,6 +37,25 @@ python -m http.server -d site 8000     # explore the site locally
 - Momentum tilt 2021-2023: +74% gross / +71% net of 10 bps vs SPY +33% - but **lower Sharpe than the equal-weight universe** (0.78 vs 0.90). No free lunch, reported as-is.
 - Under plain OLS, META's momentum loading looks significant (p=0.008); under Newey-West it does not (p=0.08). Inference method changes conclusions.
 
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A["Yahoo adjusted closes<br/>16 tickers, monthly"] --> C["Align on PeriodIndex<br/>excess returns R_i - RF"]
+    B["Ken French library<br/>FF5 + momentum"] --> C
+    C --> D["OLS x CAPM/FF3/FF4/FF5<br/>Newey-West HAC(6), BH q-values"]
+    C --> E["12-1 momentum signal<br/>strictly no-lookahead"]
+    D --> F["OOS validation<br/>train 2015-20 to test 2021-23"]
+    E --> G["Top-5 tilt backtest 2021-23<br/>cost grid, vs EW16 + SPY"]
+    D --> H["results/ frozen artifacts<br/>sha256 manifest + audit"]
+    F --> H
+    G --> H
+    H --> I["site/ explorer<br/>Chart.js on Vercel"]
+```
+
+Full module map and the backtest no-lookahead loop: [docs/architecture.md](docs/architecture.md)
+
 ## Layout
 
 ```
