@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Factor Equity Pricing - Ayush Singh</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="brand">∑ Factor Pricing</div>
+    <div class="nav-links">
+      <a href="#loadings">Loadings</a><a href="#deepdive">AAPL</a>
+      <a href="#oos">Out-of-sample</a><a href="#backtest">Backtest</a>
+      <a href="#method">Method</a>
+      <a id="repo-link" href="https://github.com/ByteB1itz420/equity-factor-model" target="_blank" rel="noopener">GitHub ↗</a>
+      <button id="theme-toggle" aria-label="toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <h1>Multi-Factor Equity Pricing</h1>
+    <p class="sub">CAPM → Fama-French 3/4/5 factor exposure, out-of-sample validation, and a
+    cost-aware momentum-tilt backtest across a 16-stock US universe · 2015-2023 · monthly</p>
+    <div class="cards" id="stat-cards"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="loadings">
+  <h2>Factor loadings</h2>
+  <p class="note">OLS of monthly excess returns (R−RF) on each factor set, Newey-West HAC(6) inference.
+  α is monthly; q is the Benjamini-Hochberg adjusted p-value across the 16 alphas of that model.</p>
+  <div class="controls" id="model-tabs"></div>
+  <div class="table-wrap"><table id="loadings-table"></table></div>
+</section>
+
+<section id="deepdive">
+  <h2>Deep dive: AAPL × FF3</h2>
+  <div class="chips" id="diag-chips"></div>
+  <div class="grid2">
+    <div class="panel"><h3>Actual vs fitted excess return</h3><canvas id="chart-fitted"></canvas></div>
+    <div class="panel"><h3>Rolling 36-month market beta</h3><canvas id="chart-beta"></canvas></div>
+  </div>
+</section>
+
+<section id="oos">
+  <h2>Out-of-sample validation</h2>
+  <p class="note">Betas estimated on 2015-2020 only, applied once to 2021-2023. OOS R² is measured
+  against a train-mean benchmark - above zero means the factor structure generalized.</p>
+  <div class="panel"><canvas id="chart-oos"></canvas></div>
+</section>
+
+<section id="backtest">
+  <h2>Backtest: 12-1 momentum tilt, 2021-2023</h2>
+  <p class="note">Each month: rank the 16 stocks by trailing 12-1 momentum (strictly past data),
+  hold the top 5 equal-weight, rebalance monthly. Net = 10 bps per unit one-way turnover.
+  Benchmarks: equal-weight universe and SPY.</p>
+  <div class="panel"><canvas id="chart-equity"></canvas></div>
+  <div class="table-wrap"><table id="bt-table"></table></div>
+</section>
+
+<section id="method">
+  <h2>Method & honest caveats</h2>
+  <div class="method-grid">
+    <div class="panel">
+      <h3>Pipeline</h3>
+      <ul>
+        <li>Yahoo Finance auto-adjusted monthly closes; Ken French library factors (MKT, SMB, HML, RMW, CMA, UMD, RF)</li>
+        <li>Excess-return regressions with Newey-West HAC(6); BH control over the 16 alphas per model</li>
+        <li>Residual diagnostics: Jarque-Bera, Ljung-Box(12)</li>
+        <li>Frozen artifacts, sha256 manifest, audit script, pytest suite</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>What this does NOT claim</h3>
+      <ul>
+        <li>The 16-stock universe is hindsight-selected (survivorship bias) - backtest returns are optimistic by construction</li>
+        <li>36 test months is short; no alpha is claimed anywhere</li>
+        <li>The momentum tilt beats SPY on total return but not the equal-weight universe on Sharpe - reported as-is</li>
+        <li>Monthly rebalancing at ~5.7× annual turnover is cost-sensitive; the 50 bps stress shows it</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>Ayush Singh · data retrieved <span id="retrieved"></span> · research artifact, not investment advice</footer>
+<script src="app.js"></script>
+</body>
+</html>

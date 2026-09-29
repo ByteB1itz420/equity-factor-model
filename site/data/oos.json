@@ -1,0 +1,538 @@
+{
+  "per_stock": [
+    {
+      "ticker": "AAPL",
+      "model": "CAPM",
+      "oos_r2": 0.616137,
+      "train_r2": 0.422119,
+      "alpha_train": 0.012991,
+      "alpha_train_p": 0.064339
+    },
+    {
+      "ticker": "MSFT",
+      "model": "CAPM",
+      "oos_r2": 0.539569,
+      "train_r2": 0.406502,
+      "alpha_train": 0.015255,
+      "alpha_train_p": 0.000776
+    },
+    {
+      "ticker": "GOOGL",
+      "model": "CAPM",
+      "oos_r2": 0.511024,
+      "train_r2": 0.42205,
+      "alpha_train": 0.007943,
+      "alpha_train_p": 0.081638
+    },
+    {
+      "ticker": "NVDA",
+      "model": "CAPM",
+      "oos_r2": 0.419547,
+      "train_r2": 0.240444,
+      "alpha_train": 0.038901,
+      "alpha_train_p": 0.016612
+    },
+    {
+      "ticker": "AMD",
+      "model": "CAPM",
+      "oos_r2": 0.363295,
+      "train_r2": 0.322053,
+      "alpha_train": 0.040182,
+      "alpha_train_p": 0.024139
+    },
+    {
+      "ticker": "JPM",
+      "model": "CAPM",
+      "oos_r2": 0.44734,
+      "train_r2": 0.596909,
+      "alpha_train": 0.000922,
+      "alpha_train_p": 0.863645
+    },
+    {
+      "ticker": "GS",
+      "model": "CAPM",
+      "oos_r2": 0.582101,
+      "train_r2": 0.596455,
+      "alpha_train": -0.007302,
+      "alpha_train_p": 0.19138
+    },
+    {
+      "ticker": "JNJ",
+      "model": "CAPM",
+      "oos_r2": -0.043738,
+      "train_r2": 0.415428,
+      "alpha_train": 0.001138,
+      "alpha_train_p": 0.787937
+    },
+    {
+      "ticker": "PG",
+      "model": "CAPM",
+      "oos_r2": 0.080669,
+      "train_r2": 0.169306,
+      "alpha_train": 0.004426,
+      "alpha_train_p": 0.446998
+    },
+    {
+      "ticker": "XOM",
+      "model": "CAPM",
+      "oos_r2": -0.138689,
+      "train_r2": 0.607064,
+      "alpha_train": -0.019115,
+      "alpha_train_p": 0.014549
+    },
+    {
+      "ticker": "CVX",
+      "model": "CAPM",
+      "oos_r2": 0.085291,
+      "train_r2": 0.55358,
+      "alpha_train": -0.012085,
+      "alpha_train_p": 0.073174
+    },
+    {
+      "ticker": "WMT",
+      "model": "CAPM",
+      "oos_r2": 0.208898,
+      "train_r2": 0.081431,
+      "alpha_train": 0.006249,
+      "alpha_train_p": 0.288441
+    },
+    {
+      "ticker": "AMZN",
+      "model": "CAPM",
+      "oos_r2": 0.440177,
+      "train_r2": 0.346647,
+      "alpha_train": 0.023846,
+      "alpha_train_p": 0.008926
+    },
+    {
+      "ticker": "META",
+      "model": "CAPM",
+      "oos_r2": 0.145376,
+      "train_r2": 0.399053,
+      "alpha_train": 0.007954,
+      "alpha_train_p": 0.178706
+    },
+    {
+      "ticker": "BRK-B",
+      "model": "CAPM",
+      "oos_r2": 0.523506,
+      "train_r2": 0.579688,
+      "alpha_train": -0.002226,
+      "alpha_train_p": 0.449185
+    },
+    {
+      "ticker": "IWM",
+      "model": "CAPM",
+      "oos_r2": 0.774796,
+      "train_r2": 0.859581,
+      "alpha_train": -0.004116,
+      "alpha_train_p": 0.106918
+    },
+    {
+      "ticker": "AAPL",
+      "model": "FF3",
+      "oos_r2": 0.70544,
+      "train_r2": 0.495429,
+      "alpha_train": 0.006297,
+      "alpha_train_p": 0.305711
+    },
+    {
+      "ticker": "MSFT",
+      "model": "FF3",
+      "oos_r2": 0.722981,
+      "train_r2": 0.53977,
+      "alpha_train": 0.011726,
+      "alpha_train_p": 0.001249
+    },
+    {
+      "ticker": "GOOGL",
+      "model": "FF3",
+      "oos_r2": 0.562238,
+      "train_r2": 0.483347,
+      "alpha_train": 0.005022,
+      "alpha_train_p": 0.293668
+    },
+    {
+      "ticker": "NVDA",
+      "model": "FF3",
+      "oos_r2": 0.523093,
+      "train_r2": 0.257291,
+      "alpha_train": 0.034148,
+      "alpha_train_p": 0.070452
+    },
+    {
+      "ticker": "AMD",
+      "model": "FF3",
+      "oos_r2": 0.439997,
+      "train_r2": 0.335506,
+      "alpha_train": 0.034303,
+      "alpha_train_p": 0.063208
+    },
+    {
+      "ticker": "JPM",
+      "model": "FF3",
+      "oos_r2": 0.653477,
+      "train_r2": 0.78472,
+      "alpha_train": 0.010032,
+      "alpha_train_p": 0.002139
+    },
+    {
+      "ticker": "GS",
+      "model": "FF3",
+      "oos_r2": 0.720613,
+      "train_r2": 0.68836,
+      "alpha_train": 0.000497,
+      "alpha_train_p": 0.934221
+    },
+    {
+      "ticker": "JNJ",
+      "model": "FF3",
+      "oos_r2": -0.205389,
+      "train_r2": 0.503581,
+      "alpha_train": -0.001114,
+      "alpha_train_p": 0.795129
+    },
+    {
+      "ticker": "PG",
+      "model": "FF3",
+      "oos_r2": 0.281101,
+      "train_r2": 0.288746,
+      "alpha_train": 0.003249,
+      "alpha_train_p": 0.552154
+    },
+    {
+      "ticker": "XOM",
+      "model": "FF3",
+      "oos_r2": 0.229535,
+      "train_r2": 0.692961,
+      "alpha_train": -0.012911,
+      "alpha_train_p": 0.039573
+    },
+    {
+      "ticker": "CVX",
+      "model": "FF3",
+      "oos_r2": 0.466367,
+      "train_r2": 0.636648,
+      "alpha_train": -0.005295,
+      "alpha_train_p": 0.304089
+    },
+    {
+      "ticker": "WMT",
+      "model": "FF3",
+      "oos_r2": 0.303413,
+      "train_r2": 0.164993,
+      "alpha_train": 0.004067,
+      "alpha_train_p": 0.472531
+    },
+    {
+      "ticker": "AMZN",
+      "model": "FF3",
+      "oos_r2": 0.611409,
+      "train_r2": 0.524751,
+      "alpha_train": 0.01414,
+      "alpha_train_p": 0.100836
+    },
+    {
+      "ticker": "META",
+      "model": "FF3",
+      "oos_r2": 0.209115,
+      "train_r2": 0.42836,
+      "alpha_train": 0.004389,
+      "alpha_train_p": 0.493146
+    },
+    {
+      "ticker": "BRK-B",
+      "model": "FF3",
+      "oos_r2": 0.744821,
+      "train_r2": 0.671496,
+      "alpha_train": -0.000184,
+      "alpha_train_p": 0.940826
+    },
+    {
+      "ticker": "IWM",
+      "model": "FF3",
+      "oos_r2": 0.986837,
+      "train_r2": 0.992331,
+      "alpha_train": -0.000695,
+      "alpha_train_p": 0.142393
+    },
+    {
+      "ticker": "AAPL",
+      "model": "FF4",
+      "oos_r2": 0.708995,
+      "train_r2": 0.499826,
+      "alpha_train": 0.006269,
+      "alpha_train_p": 0.301528
+    },
+    {
+      "ticker": "MSFT",
+      "model": "FF4",
+      "oos_r2": 0.726953,
+      "train_r2": 0.544027,
+      "alpha_train": 0.011747,
+      "alpha_train_p": 0.002412
+    },
+    {
+      "ticker": "GOOGL",
+      "model": "FF4",
+      "oos_r2": 0.446672,
+      "train_r2": 0.502287,
+      "alpha_train": 0.004977,
+      "alpha_train_p": 0.265801
+    },
+    {
+      "ticker": "NVDA",
+      "model": "FF4",
+      "oos_r2": 0.49139,
+      "train_r2": 0.26069,
+      "alpha_train": 0.034112,
+      "alpha_train_p": 0.06677
+    },
+    {
+      "ticker": "AMD",
+      "model": "FF4",
+      "oos_r2": 0.406664,
+      "train_r2": 0.33947,
+      "alpha_train": 0.034249,
+      "alpha_train_p": 0.069534
+    },
+    {
+      "ticker": "JPM",
+      "model": "FF4",
+      "oos_r2": 0.64674,
+      "train_r2": 0.785899,
+      "alpha_train": 0.010019,
+      "alpha_train_p": 0.001783
+    },
+    {
+      "ticker": "GS",
+      "model": "FF4",
+      "oos_r2": 0.722643,
+      "train_r2": 0.689699,
+      "alpha_train": 0.000513,
+      "alpha_train_p": 0.933281
+    },
+    {
+      "ticker": "JNJ",
+      "model": "FF4",
+      "oos_r2": -0.369955,
+      "train_r2": 0.510285,
+      "alpha_train": -0.001095,
+      "alpha_train_p": 0.790513
+    },
+    {
+      "ticker": "PG",
+      "model": "FF4",
+      "oos_r2": 0.264647,
+      "train_r2": 0.292207,
+      "alpha_train": 0.003261,
+      "alpha_train_p": 0.538982
+    },
+    {
+      "ticker": "XOM",
+      "model": "FF4",
+      "oos_r2": 0.163328,
+      "train_r2": 0.702473,
+      "alpha_train": -0.012875,
+      "alpha_train_p": 0.03696
+    },
+    {
+      "ticker": "CVX",
+      "model": "FF4",
+      "oos_r2": 0.285769,
+      "train_r2": 0.673543,
+      "alpha_train": -0.005218,
+      "alpha_train_p": 0.307592
+    },
+    {
+      "ticker": "WMT",
+      "model": "FF4",
+      "oos_r2": 0.301979,
+      "train_r2": 0.165988,
+      "alpha_train": 0.004059,
+      "alpha_train_p": 0.477664
+    },
+    {
+      "ticker": "AMZN",
+      "model": "FF4",
+      "oos_r2": 0.575205,
+      "train_r2": 0.529491,
+      "alpha_train": 0.01411,
+      "alpha_train_p": 0.090015
+    },
+    {
+      "ticker": "META",
+      "model": "FF4",
+      "oos_r2": 0.185613,
+      "train_r2": 0.429233,
+      "alpha_train": 0.004378,
+      "alpha_train_p": 0.491181
+    },
+    {
+      "ticker": "BRK-B",
+      "model": "FF4",
+      "oos_r2": 0.732811,
+      "train_r2": 0.682602,
+      "alpha_train": -0.000209,
+      "alpha_train_p": 0.937506
+    },
+    {
+      "ticker": "IWM",
+      "model": "FF4",
+      "oos_r2": 0.986654,
+      "train_r2": 0.993733,
+      "alpha_train": -0.000706,
+      "alpha_train_p": 0.118049
+    },
+    {
+      "ticker": "AAPL",
+      "model": "FF5",
+      "oos_r2": 0.495704,
+      "train_r2": 0.535313,
+      "alpha_train": 0.005769,
+      "alpha_train_p": 0.373309
+    },
+    {
+      "ticker": "MSFT",
+      "model": "FF5",
+      "oos_r2": 0.712219,
+      "train_r2": 0.56096,
+      "alpha_train": 0.011986,
+      "alpha_train_p": 0.000599
+    },
+    {
+      "ticker": "GOOGL",
+      "model": "FF5",
+      "oos_r2": 0.587118,
+      "train_r2": 0.534116,
+      "alpha_train": 0.004996,
+      "alpha_train_p": 0.249376
+    },
+    {
+      "ticker": "NVDA",
+      "model": "FF5",
+      "oos_r2": 0.539316,
+      "train_r2": 0.291815,
+      "alpha_train": 0.0343,
+      "alpha_train_p": 0.064156
+    },
+    {
+      "ticker": "AMD",
+      "model": "FF5",
+      "oos_r2": 0.191545,
+      "train_r2": 0.384997,
+      "alpha_train": 0.035763,
+      "alpha_train_p": 0.039602
+    },
+    {
+      "ticker": "JPM",
+      "model": "FF5",
+      "oos_r2": 0.661708,
+      "train_r2": 0.841405,
+      "alpha_train": 0.010782,
+      "alpha_train_p": 3e-06
+    },
+    {
+      "ticker": "GS",
+      "model": "FF5",
+      "oos_r2": 0.732397,
+      "train_r2": 0.702906,
+      "alpha_train": 0.000974,
+      "alpha_train_p": 0.860958
+    },
+    {
+      "ticker": "JNJ",
+      "model": "FF5",
+      "oos_r2": 0.092941,
+      "train_r2": 0.538853,
+      "alpha_train": -0.001351,
+      "alpha_train_p": 0.731099
+    },
+    {
+      "ticker": "PG",
+      "model": "FF5",
+      "oos_r2": 0.550831,
+      "train_r2": 0.380442,
+      "alpha_train": 0.002893,
+      "alpha_train_p": 0.545225
+    },
+    {
+      "ticker": "XOM",
+      "model": "FF5",
+      "oos_r2": 0.291241,
+      "train_r2": 0.731857,
+      "alpha_train": -0.013146,
+      "alpha_train_p": 0.02042
+    },
+    {
+      "ticker": "CVX",
+      "model": "FF5",
+      "oos_r2": 0.497887,
+      "train_r2": 0.685804,
+      "alpha_train": -0.005344,
+      "alpha_train_p": 0.257407
+    },
+    {
+      "ticker": "WMT",
+      "model": "FF5",
+      "oos_r2": 0.235854,
+      "train_r2": 0.211925,
+      "alpha_train": 0.003605,
+      "alpha_train_p": 0.494729
+    },
+    {
+      "ticker": "AMZN",
+      "model": "FF5",
+      "oos_r2": 0.727166,
+      "train_r2": 0.562983,
+      "alpha_train": 0.014792,
+      "alpha_train_p": 0.067217
+    },
+    {
+      "ticker": "META",
+      "model": "FF5",
+      "oos_r2": 0.193227,
+      "train_r2": 0.469095,
+      "alpha_train": 0.00436,
+      "alpha_train_p": 0.474453
+    },
+    {
+      "ticker": "BRK-B",
+      "model": "FF5",
+      "oos_r2": 0.744165,
+      "train_r2": 0.678448,
+      "alpha_train": -0.000206,
+      "alpha_train_p": 0.931376
+    },
+    {
+      "ticker": "IWM",
+      "model": "FF5",
+      "oos_r2": 0.986843,
+      "train_r2": 0.993693,
+      "alpha_train": -0.000621,
+      "alpha_train_p": 0.178245
+    }
+  ],
+  "summary": [
+    {
+      "model": "CAPM",
+      "oos_r2": 0.347206,
+      "train_r2": 0.438644
+    },
+    {
+      "model": "FF3",
+      "oos_r2": 0.49719,
+      "train_r2": 0.530518
+    },
+    {
+      "model": "FF4",
+      "oos_r2": 0.454757,
+      "train_r2": 0.537591
+    },
+    {
+      "model": "FF5",
+      "oos_r2": 0.51501,
+      "train_r2": 0.569038
+    }
+  ]
+}

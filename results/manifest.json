@@ -1,0 +1,13 @@
+{
+  "aapl_diagnostics.json": "75c2701400c10720c4bf44242380f1e520fc4867af6088c0c33a514a896ddb44",
+  "aapl_ff3_timeseries.csv": "3fbc2b6feee0a147744f01d47b8ab1a2624b2128d23e185acbbbdc9e00541326",
+  "aapl_rolling_beta.csv": "ce2fa88c93892c1b605b6e5e8b870472985a8f28d1152b5d7d2bf55cf4ffad46",
+  "backtest_equity_curves.csv": "4ad10f573e74ca06349f94dd48505728e4982fc1dd25f578c5e713bf3494b7ac",
+  "backtest_holdings.csv": "31f494132348fe2e93877306216784f55a3d81056d1bd4e18274c9040a67ad3b",
+  "backtest_monthly.csv": "a3aba7d197d49e393014cf1cf16b3a5d24ce2cb0cd80cf8b7a01b68c3e18f245",
+  "backtest_stats.csv": "df59b380b95d0663f2bc924dd4760bb4ec83ec45ef208b5fdb3e845c9d27536a",
+  "factor_loadings.csv": "1d5170c6e7acf765a18b0c0bedf007f91a66be481cc425d9c67dc3f53715f544",
+  "oos_evaluation.csv": "c4c206ce1d5186bc72a3ef630be99a1a1e6fd5120022d36327f25c813047dcf7",
+  "oos_summary.csv": "22966abbaceae49aa3ca361041f58e4bf78703da3b0a0a759e4fc8ee91355a51",
+  "provenance.json": "154b28dd9e983266088a591f577dc2e89882654cf013735b820af15f7bef93f1"
+}

@@ -1,0 +1,49 @@
+:root {
+  --bg:#0b0e14; --panel:#12161f; --panel2:#171c27; --text:#e6e9f0; --muted:#8b93a7;
+  --accent:#5b8cff; --accent2:#34d399; --warn:#f59e0b; --bad:#f87171; --line:#232a3a;
+}
+[data-theme="light"] {
+  --bg:#f6f7fb; --panel:#ffffff; --panel2:#eef1f7; --text:#141824; --muted:#5c6478;
+  --accent:#2f5fe0; --accent2:#0d9463; --warn:#b45309; --bad:#dc2626; --line:#dde2ee;
+}
+* { box-sizing:border-box; margin:0; }
+body { background:var(--bg); color:var(--text); font:15px/1.55 -apple-system,"Segoe UI",Inter,Roboto,sans-serif; transition:background .25s,color .25s; }
+.wrap { max-width:1060px; margin:0 auto; padding:0 20px; }
+nav { position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+.nav-inner { max-width:1060px; margin:0 auto; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; }
+.brand { font-weight:700; letter-spacing:.3px; }
+.nav-links { display:flex; gap:16px; align-items:center; font-size:13.5px; flex-wrap:wrap; }
+.nav-links a { color:var(--muted); text-decoration:none; } .nav-links a:hover { color:var(--text); }
+#theme-toggle { background:var(--panel2); color:var(--text); border:1px solid var(--line); border-radius:8px; width:32px; height:32px; cursor:pointer; font-size:15px; }
+header { padding:64px 0 28px; }
+h1 { font-size:clamp(28px,4.5vw,42px); letter-spacing:-.5px; }
+.sub { color:var(--muted); max-width:760px; margin-top:10px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:26px; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+.card .v { font-size:22px; font-weight:700; } .card .k { color:var(--muted); font-size:12px; margin-top:2px; }
+section { padding:34px 0; border-top:1px solid var(--line); }
+h2 { font-size:22px; margin-bottom:8px; } h3 { font-size:14px; color:var(--muted); margin-bottom:10px; font-weight:600; }
+.note { color:var(--muted); font-size:13.5px; max-width:820px; margin-bottom:16px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px; margin-bottom:14px; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (max-width:820px){ .grid2 { grid-template-columns:1fr; } }
+.controls { display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; }
+.controls button { background:var(--panel2); color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:7px 16px; cursor:pointer; font-size:13.5px; }
+.controls button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:var(--panel); }
+table { border-collapse:collapse; width:100%; font-size:13px; }
+th { text-align:left; padding:10px 12px; color:var(--muted); font-weight:600; border-bottom:1px solid var(--line); cursor:pointer; user-select:none; white-space:nowrap; }
+td { padding:9px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; }
+tr:last-child td { border-bottom:none; }
+.pos { color:var(--accent2); } .neg { color:var(--bad); }
+.sig { display:inline-block; padding:1px 8px; border-radius:999px; font-size:11px; font-weight:600; }
+.sig.yes { background:color-mix(in srgb, var(--accent2) 18%, transparent); color:var(--accent2); }
+.sig.no { background:color-mix(in srgb, var(--muted) 15%, transparent); color:var(--muted); }
+.chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.chip { background:var(--panel2); border:1px solid var(--line); border-radius:999px; padding:5px 13px; font-size:12.5px; color:var(--muted); }
+.chip b { color:var(--text); }
+.method-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (max-width:820px){ .method-grid { grid-template-columns:1fr; } }
+.method-grid ul { padding-left:18px; color:var(--muted); font-size:13.5px; } .method-grid li { margin-bottom:7px; }
+footer { padding:34px 20px 44px; text-align:center; color:var(--muted); font-size:12.5px; border-top:1px solid var(--line); }
+canvas { max-height:340px; }

@@ -1,0 +1,172 @@
+{
+  "protocol": {
+    "project": "equity-factor-model",
+    "author": "Ayush Singh",
+    "protocol_frozen_at": "2026-09-29",
+    "data": {
+      "price_source": "Yahoo Finance via yfinance (auto-adjusted OHLC, monthly bars)",
+      "factor_source": "Kenneth R. French Data Library (Dartmouth)",
+      "factor_series": [
+        "Mkt-RF",
+        "SMB",
+        "HML",
+        "RMW",
+        "CMA",
+        "RF",
+        "UMD"
+      ],
+      "universe": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "NVDA",
+        "AMD",
+        "JPM",
+        "GS",
+        "JNJ",
+        "PG",
+        "XOM",
+        "CVX",
+        "WMT",
+        "AMZN",
+        "META",
+        "BRK-B",
+        "IWM"
+      ],
+      "universe_note": "Universe inherited from the original notebook analysis. It is hindsight-selected (survivors), which biases backtest results upward. Stated as a caveat everywhere.\n",
+      "price_window": {
+        "start": "2014-11-01",
+        "end": "2024-01-01"
+      },
+      "sample": {
+        "start": "2015-01",
+        "end": "2023-12"
+      }
+    },
+    "regression": {
+      "models": {
+        "CAPM": [
+          "Mkt-RF"
+        ],
+        "FF3": [
+          "Mkt-RF",
+          "SMB",
+          "HML"
+        ],
+        "FF4": [
+          "Mkt-RF",
+          "SMB",
+          "HML",
+          "UMD"
+        ],
+        "FF5": [
+          "Mkt-RF",
+          "SMB",
+          "HML",
+          "RMW",
+          "CMA"
+        ]
+      },
+      "hac_lags": 6,
+      "alpha_multiple_testing": "benjamini-hochberg (q=0.05 across 16 alphas per model)",
+      "rolling_beta_window": 36
+    },
+    "diagnostics": {
+      "jarque_bera": true,
+      "ljung_box_lags": 12
+    },
+    "evaluation": {
+      "train": {
+        "start": "2015-01",
+        "end": "2020-12"
+      },
+      "test": {
+        "start": "2021-01",
+        "end": "2023-12"
+      },
+      "oos_metric": "out-of-sample R2 vs train-mean benchmark"
+    },
+    "backtest": {
+      "strategy": "long-only monthly-rebalanced top-5 of 16 by 12-1 momentum (total return months t-12..t-2)",
+      "benchmark_1": "equal-weight 16-stock universe, monthly rebalanced",
+      "benchmark_2": "SPY (Yahoo auto-adjusted)",
+      "evaluation_window": {
+        "start": "2021-01",
+        "end": "2023-12"
+      },
+      "cost_grid_bps": [
+        0,
+        10,
+        25,
+        50
+      ],
+      "headline_cost_bps": 10
+    },
+    "reproducibility": {
+      "retrieval_date_recorded": true,
+      "manifest": "sha256 over every results artifact",
+      "audit_script": "experiments/audit_snapshot.py"
+    },
+    "notes": [
+      "Regressions use excess returns (R_i - RF); the original notebook's Week-3 regression used raw returns, corrected here and documented in REPORT.md.",
+      "No parameter was changed after inspecting test-window results."
+    ]
+  },
+  "retrieval": {
+    "retrieved_at_utc": "2026-09-29T06:15:10+00:00",
+    "prices": {
+      "source": "yfinance auto_adjust=True interval=1mo",
+      "window": {
+        "start": "2014-11-01",
+        "end": "2024-01-01"
+      },
+      "per_ticker_sha256": {
+        "AAPL": "3f416dcde0fae6e516a307eae349833379d58126e8dae3da5bd6205e390942b5",
+        "MSFT": "324765297ea3ef3fec0d1e33936290e793bc07d05a0ccd6b27621220764f79d9",
+        "GOOGL": "9a6075c3d14f286f976f7dcf0dcb482fcfe856c263d98ca07fed2e01616f565b",
+        "NVDA": "b1aedbe4f632fb8b9948b6da89cb6bf5f070b9bc5476126825707be84c3b1b60",
+        "AMD": "0b9d20f8cf7a22d18c3c5cfc11535bf3d234eb2ffb439dbde7359a1e20e1506d",
+        "JPM": "a60167aa1d59cc1c9871df74c179bf3bf3a883ebb58acd94c8422fbbe8668552",
+        "GS": "a0f27648b2231e02ee4ec76c55a71852b0ab75ba0bebc6dbd6efefdb24353645",
+        "JNJ": "0f7b0949007a5bf628cf29574e98c2c23bfbb53186469cb9fc32e0b1cd4900a4",
+        "PG": "7c15b7919e1e529bc6bd80002b3168d94da77f3e109711cc5ac1bf49472cb109",
+        "XOM": "d54a69ae6cdf7d7c847830d887d77581bf89847843b3278b771066222553ce16",
+        "CVX": "18c7a2fd41e6a7f61ad3bb3befa46f938d5432cec62850c3919c259311ea6f93",
+        "WMT": "51bf47af22c1ecd3051b182856fe5423ece7825f44e837241327f68db26c9478",
+        "AMZN": "49663a2e6216e9f95386d19b371be7795393a4fb6f4e9abb9d581f52cfe70e9d",
+        "META": "147863611443d04c14e6670bb0c0dad489cccd118f7ff567ca3ecd1e57bba456",
+        "BRK-B": "b46d5aa2e440562d73bf750030906277403d6ebd07b42e8ed083edee37ffdd89",
+        "IWM": "a45f0b62bb5d415e799c8ad787b17d2f0d05f02e98eff3fce2237d20191928a8"
+      }
+    },
+    "factors": {
+      "ff5": {
+        "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip",
+        "sha256": "36756c5c2559648519ac4b22913d860c6afd865cfebce920e3e8927f8e2d10b7"
+      },
+      "momentum": {
+        "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Momentum_Factor_CSV.zip",
+        "sha256": "c06d1c2e9a5e4f6985879722f23c6bb585f46b34eaf3fcb681d4de887e353f3e"
+      }
+    }
+  },
+  "sample_months": 108,
+  "tickers": [
+    "AAPL",
+    "MSFT",
+    "GOOGL",
+    "NVDA",
+    "AMD",
+    "JPM",
+    "GS",
+    "JNJ",
+    "PG",
+    "XOM",
+    "CVX",
+    "WMT",
+    "AMZN",
+    "META",
+    "BRK-B",
+    "IWM"
+  ]
+}

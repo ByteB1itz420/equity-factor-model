@@ -1,0 +1,74 @@
+{
+  "title": "Multi-Factor Equity Pricing",
+  "universe": [
+    "AAPL",
+    "MSFT",
+    "GOOGL",
+    "NVDA",
+    "AMD",
+    "JPM",
+    "GS",
+    "JNJ",
+    "PG",
+    "XOM",
+    "CVX",
+    "WMT",
+    "AMZN",
+    "META",
+    "BRK-B",
+    "IWM"
+  ],
+  "sample": {
+    "start": "2015-01",
+    "end": "2023-12"
+  },
+  "train": {
+    "start": "2015-01",
+    "end": "2020-12"
+  },
+  "test": {
+    "start": "2021-01",
+    "end": "2023-12"
+  },
+  "models": {
+    "CAPM": [
+      "Mkt-RF"
+    ],
+    "FF3": [
+      "Mkt-RF",
+      "SMB",
+      "HML"
+    ],
+    "FF4": [
+      "Mkt-RF",
+      "SMB",
+      "HML",
+      "UMD"
+    ],
+    "FF5": [
+      "Mkt-RF",
+      "SMB",
+      "HML",
+      "RMW",
+      "CMA"
+    ]
+  },
+  "retrieved_at_utc": "2026-09-29T06:15:10+00:00",
+  "hac_lags": 6,
+  "backtest": {
+    "strategy": "long-only monthly-rebalanced top-5 of 16 by 12-1 momentum (total return months t-12..t-2)",
+    "benchmark_1": "equal-weight 16-stock universe, monthly rebalanced",
+    "benchmark_2": "SPY (Yahoo auto-adjusted)",
+    "evaluation_window": {
+      "start": "2021-01",
+      "end": "2023-12"
+    },
+    "cost_grid_bps": [
+      0,
+      10,
+      25,
+      50
+    ],
+    "headline_cost_bps": 10
+  }
+}
